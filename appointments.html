@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Appointments</title>
+</head>
+<body style="background-color:#fff3e0; font-family: Arial, sans-serif; text-align:center;">
+
+    <h1 style="color:#f57c00;">Appointments</h1>
+
+    <form method="post" style="background-color:#ffffff; padding:15px; display:inline-block; border-radius:10px;">
+        Patient Name: <input type="text" name="patient_name" required style="margin:5px; padding:5px; border-radius:5px;">
+        Doctor Name: <input type="text" name="doctor_name" required style="margin:5px; padding:5px; border-radius:5px;">
+        Date: <input type="date" name="date" required style="margin:5px; padding:5px; border-radius:5px;">
+        <button type="submit" style="padding:5px 10px; background-color:#f57c00; color:white; border:none; border-radius:5px; cursor:pointer;">Book Appointment</button>
+    </form>
+
+    <ul style="list-style:none; padding:0; max-width:400px; margin:20px auto;">
+        {% for appt in appointments %}
+            <li style="background-color:#ffe0b2; margin:5px 0; padding:10px; border-radius:5px;">{{ appt.patient_name }} with {{ appt.doctor_name }} on {{ appt.date }}</li>
+        {% endfor %}
+    </ul>
+
+    <p><a href="/" style="color:white; background-color:#f57c00; padding:5px 10px; text-decoration:none; border-radius:5px;">Back to Home</a></p>
+
+</body>
+</html>

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>AI Chat</title>
+</head>
+<body style="background-color:#fff0f5; font-family: Arial, sans-serif; text-align:center;">
+
+    <h1 style="color:#6f42c1;">Chat with AI</h1>
+
+    <form action="/chat" method="post" style="background-color:#f8f9fa; padding:20px; display:inline-block; border-radius:10px;">
+        <input type="text" name="message" placeholder="Enter your message" required style="padding:8px; width:250px; border-radius:5px;">
+        <button type="submit" style="padding:8px 12px; border-radius:5px; background-color:#6f42c1; color:white; border:none; cursor:pointer;">Send</button>
+    </form>
+
+    {% if user_message %}
+        <p><strong style="color:#2a7ae2;">You:</strong> {{ user_message }}</p>
+        <p><strong style="color:#28a745;">AI:</strong> {{ ai_reply }}</p>
+    {% endif %}
+
+    <p><a href="/" style="color:white; background-color:#2a7ae2; padding:5px 10px; text-decoration:none; border-radius:5px;">Back to Home</a></p>
+
+</body>
+</html>

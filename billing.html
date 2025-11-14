@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Billing</title>
+</head>
+<body style="background-color:#fff0f5; font-family: Arial, sans-serif; text-align:center;">
+
+    <h1 style="color:#c2185b;">Billing</h1>
+
+    <form method="post" style="background-color:#ffffff; padding:15px; display:inline-block; border-radius:10px;">
+        Patient Name: <input type="text" name="patient_name" required style="margin:5px; padding:5px; border-radius:5px;">
+        Amount: <input type="text" name="amount" required style="margin:5px; padding:5px; border-radius:5px;">
+        <button type="submit" style="padding:5px 10px; background-color:#c2185b; color:white; border:none; border-radius:5px; cursor:pointer;">Add Bill</button>
+    </form>
+
+    <ul style="list-style:none; padding:0; max-width:400px; margin:20px auto;">
+        {% for bill in bills %}
+            <li style="background-color:#f8bbd0; margin:5px 0; padding:10px; border-radius:5px;">{{ bill.patient_name }}: ${{ bill.amount }}</li>
+        {% endfor %}
+    </ul>
+
+    <p><a href="/" style="color:white; background-color:#c2185b; padding:5px 10px; text-decoration:none; border-radius:5px;">Back to Home</a></p>
+
+</body>
+</html>
